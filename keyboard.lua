@@ -21,3 +21,22 @@ function keyboard.isHeld(key)
     end
     return false
 end
+
+function keyboard.isAnyPressed(...)
+    for i,v in ipairs({...}) do
+        if keys[v] ~= nil and old_keys[v] == nil then
+            return true
+        end
+    end
+    return false
+end
+
+function keyboard.isAnyHeld(...)
+    for i,v in ipairs({...}) do
+        if keys[v] ~= nil and old_keys[v] ~= nil then
+            return true
+        end
+    end
+
+    return false
+end
