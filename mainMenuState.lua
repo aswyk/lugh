@@ -3,7 +3,9 @@ mainMenuState.__index = mainMenuState
 
 local options = {
     [1] = {text = "Start", entry = nil},
-    [2] = {text = "Quit", entry = "exit"}
+    [2] = {text = "Playpen", entry = "playpen"},
+    [3] = {text = "Settings", entry = nil},
+    [4] = {text = "Quit", entry = "exit"}
 }
 
 local selection = 1
@@ -50,8 +52,6 @@ function mainMenuState:update(dt)
 	elseif keyboard.isPressed("return") then
 		if options[selection].entry ~= nil then
             gFSM:changeState(options[selection].entry)
-			--coroutine.yield()
-			--return options[selection].entry(state)
 		end
 	end
 end

@@ -8,6 +8,7 @@ require("stateMachine")
 require("mainMenuState")
 require("splashState")
 require("exitState")
+require("playpenState")
 
 debug = true
 
@@ -27,17 +28,20 @@ end
 function love.load(arg)
     --co = coroutine.create(splash.entry)
     --coroutine.resume(co, state)
-    
+
     --Andre
     gFSM = StateMachine.create()
     local lSplash = splashState.create()
     local lMainMenu = mainMenuState.create()
     local lExit = exitState.create()
-    
+
+    local lPlaypen = playpenState.create()
+
     gFSM:addState("splash", lSplash)
     gFSM:addState("mainMenu", lMainMenu)
     gFSM:addState("exit", lExit)
-    
+    gFSM:addState("playpen", lPlaypen)
+
     gFSM:setActiveState("splash")
 end
 
@@ -51,7 +55,7 @@ function love.update(dt)
         end
         love.event.quit()
     end]]
-    
+
     --Andre
     gFSM:update(dt)
 end
@@ -69,4 +73,3 @@ function love.draw(dt)
      --Andre
     gFSM:draw(dt)
 end
-
