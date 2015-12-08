@@ -1,11 +1,11 @@
 mainmenu = {}
 
-options = {
+local options = {
     [1] = {text = "Start", entry = nil},
     [2] = {text = "Quit", entry = function(s) end}
 }
 
-selection = 1
+local selection = 1
 
 function mainmenu.selectup()
     selection = selection - 1
