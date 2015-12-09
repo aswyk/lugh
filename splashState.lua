@@ -12,7 +12,7 @@ function splashState.create()
 end
 
 function splashState:draw(dt)
-	 local lg = love.graphics
+	local lg = love.graphics
 
     if transition_time < 1 then
         lg.setBackgroundColor(math.ceil(255*transition_time), math.ceil(255*transition_time), math.ceil(255*transition_time))
@@ -37,4 +37,3 @@ end
 function splashState:exit(dt)
 
 end
-

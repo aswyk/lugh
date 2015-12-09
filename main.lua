@@ -10,12 +10,15 @@ require("splashState")
 require("exitState")
 require("playpenState")
 
+require("ioKeyboard")
+
 debug = true
 
 state = {dt = 0.0}
 co = nil
 
 key_buff = {}
+
 
 function love.conf(t)
     t.title = "lUGH"
@@ -30,6 +33,8 @@ function love.load(arg)
     --coroutine.resume(co, state)
 
     --Andre
+    --ioKeys = ioKeyboard.create()
+
     gFSM = StateMachine.create()
     local lSplash = splashState.create()
     local lMainMenu = mainMenuState.create()
@@ -62,10 +67,12 @@ end
 
 function love.keypressed(key)
     key_buff[key] = true
+    --ioKeys:updateKeyDown( key )
 end
 
 function love.keyreleased(key)
     key_buff[key] = nil
+    --ioKeys:updateKeyUp( key )
 end
 
 function love.draw(dt)

@@ -38,13 +38,17 @@ function playpenState:update(dt)
 
 	if keyboard.isHeld("up") then
 		tY = tY - 1;
-	elseif keyboard.isHeld("down") then
+	end
+	if keyboard.isHeld("down") then
 		tY = tY + 1;
-	elseif keyboard.isHeld("left") then
+	end
+	if keyboard.isHeld("left") then
 		tX = tX - 1;
-	elseif keyboard.isHeld("right") then
+	end
+	if keyboard.isHeld("right") then
 		tX = tX + 1;
-	elseif keyboard.isPressed("q") then
+	end
+	if keyboard.isPressed("q") then
         gFSM:changeState("mainMenu")
 	end
 end
