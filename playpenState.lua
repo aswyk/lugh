@@ -55,8 +55,7 @@ end
 
 function playpenState:enter(dt)
 	print("entered playpen state")
-	state.draw = mainmenu.draw
-  local lg = love.graphics
+	local lg = love.graphics
 	lg.setBackgroundColor(30, 30, 30)
 
 	taxiImg = love.graphics.newImage('Assets/Textures/taxi.png')

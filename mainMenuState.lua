@@ -58,7 +58,7 @@ end
 
 function mainMenuState:enter(dt)
 	print("entered mainmenu state")
-    state.draw = mainmenu.draw
+    state.draw = mainMenuState.draw
     local lg = love.graphics
 
     lg.setBackgroundColor(0, 0, 0)

@@ -56,6 +56,6 @@ end
 
 function StateMachine:draw(dt)
 	if self.activeState.draw and type(self.activeState.draw) == "function" then
-		self.activeState.draw(dt)
+		self.activeState:draw(dt)
 	end
 end
